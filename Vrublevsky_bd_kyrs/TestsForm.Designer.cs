@@ -34,7 +34,7 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.NextQuest = new System.Windows.Forms.Button();
             this.PrewQuest = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.EndBtn = new System.Windows.Forms.Button();
             this.QuestNumb = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -44,18 +44,18 @@
             this.ThemeIndex.AutoSize = true;
             this.ThemeIndex.Location = new System.Drawing.Point(13, 13);
             this.ThemeIndex.Name = "ThemeIndex";
-            this.ThemeIndex.Size = new System.Drawing.Size(35, 13);
+            this.ThemeIndex.Size = new System.Drawing.Size(0, 13);
             this.ThemeIndex.TabIndex = 0;
-            this.ThemeIndex.Text = "label1";
+            this.ThemeIndex.Visible = false;
             // 
             // UserIndex
             // 
             this.UserIndex.AutoSize = true;
             this.UserIndex.Location = new System.Drawing.Point(13, 36);
             this.UserIndex.Name = "UserIndex";
-            this.UserIndex.Size = new System.Drawing.Size(35, 13);
+            this.UserIndex.Size = new System.Drawing.Size(0, 13);
             this.UserIndex.TabIndex = 1;
-            this.UserIndex.Text = "label1";
+            this.UserIndex.Visible = false;
             // 
             // pictureBox1
             // 
@@ -68,11 +68,13 @@
             // 
             // comboBox1
             // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(337, 424);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(392, 21);
             this.comboBox1.TabIndex = 3;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // NextQuest
             // 
@@ -96,16 +98,16 @@
             this.PrewQuest.UseVisualStyleBackColor = true;
             this.PrewQuest.Click += new System.EventHandler(this.PrewQuest_Click);
             // 
-            // button1
+            // EndBtn
             // 
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(478, 543);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(120, 23);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Завершить";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.EndBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.EndBtn.Location = new System.Drawing.Point(478, 543);
+            this.EndBtn.Name = "EndBtn";
+            this.EndBtn.Size = new System.Drawing.Size(120, 23);
+            this.EndBtn.TabIndex = 6;
+            this.EndBtn.Text = "Завершить";
+            this.EndBtn.UseVisualStyleBackColor = true;
+            this.EndBtn.Click += new System.EventHandler(this.button1_Click);
             // 
             // QuestNumb
             // 
@@ -122,7 +124,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1012, 612);
             this.Controls.Add(this.QuestNumb);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.EndBtn);
             this.Controls.Add(this.PrewQuest);
             this.Controls.Add(this.NextQuest);
             this.Controls.Add(this.comboBox1);
@@ -147,7 +149,7 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button NextQuest;
         private System.Windows.Forms.Button PrewQuest;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button EndBtn;
         private System.Windows.Forms.Label QuestNumb;
     }
 }

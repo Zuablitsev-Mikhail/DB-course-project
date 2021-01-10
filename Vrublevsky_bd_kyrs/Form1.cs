@@ -30,7 +30,7 @@ namespace Vrublevsky_bd_kyrs
             Question quest = new Question();
             /*quest.insert("/img/1.png",1);*/
             Answer answer = new Answer();
-            /*answer.insert(1, "Метла", false);*/
+            /*answer.insert(1, "Сталь", true);*/
             Result result = new Result();
             DateTime date = new DateTime();
             date = DateTime.Now;
@@ -64,7 +64,7 @@ namespace Vrublevsky_bd_kyrs
         private void GroupBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             Ugroup group = new Ugroup(GroupBox.SelectedIndex+1);
-
+            FIOComboBox.Items.Clear();
             for (int i = 1; i <= group.Users.Count; i++)
             {
                 FIOComboBox.Items.Add($"{group.Users[i-1].Surname} {group.Users[i-1].Name[0]}. {group.Users[i-1].PatronymicName[0]}.");

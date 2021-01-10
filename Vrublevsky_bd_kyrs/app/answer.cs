@@ -51,5 +51,27 @@ namespace AppAnswer
             cmd.ExecuteNonQuery();
             conn.Close();
         }
+        public void Delete(int id)
+        {
+            MySqlConnection conn;
+            string connectionString = @"server=localhost;userid=root;password=;database=test";
+            conn = new MySqlConnection(connectionString);
+            conn.Open();
+            string sql = $"DELETE FROM `answer` WHERE `id` = {id}";
+            var cmd = new MySqlCommand(sql, conn);
+            cmd.ExecuteNonQuery();
+            conn.Close();
+        }
+        public void Update(int id, int question_id, string title, bool isCorrect)
+        {
+            MySqlConnection conn;
+            string connectionString = @"server=localhost;userid=root;password=;database=test";
+            conn = new MySqlConnection(connectionString);
+            conn.Open();
+            string sql = $"UPDATE `answer` SET `question_id`={question_id},`title`='{title}',`isCorrect`={isCorrect} WHERE `id` = {id}";
+            var cmd = new MySqlCommand(sql, conn);
+            cmd.ExecuteNonQuery();
+            conn.Close();
+        }
     }
 }

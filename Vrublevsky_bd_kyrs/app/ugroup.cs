@@ -74,5 +74,27 @@ namespace AppUgroup
             cmd.ExecuteNonQuery();
             conn.Close();
         }
+        public void Delete(int id)
+        {
+            MySqlConnection conn;
+            string connectionString = @"server=localhost;userid=root;password=;database=test";
+            conn = new MySqlConnection(connectionString);
+            conn.Open();
+            string sql = $"DELETE FROM `ugroup` WHERE `id` = {id}";
+            var cmd = new MySqlCommand(sql, conn);
+            cmd.ExecuteNonQuery();
+            conn.Close();
+        }
+        public void Update(int id, string title)
+        {
+            MySqlConnection conn;
+            string connectionString = @"server=localhost;userid=root;password=;database=test";
+            conn = new MySqlConnection(connectionString);
+            conn.Open();
+            string sql = $"UPDATE `ugroup` SET `title`='{title}' WHERE `id` = {id}";
+            var cmd = new MySqlCommand(sql, conn);
+            cmd.ExecuteNonQuery();
+            conn.Close();
+        }
     }
 }
